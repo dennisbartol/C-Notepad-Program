@@ -42,3 +42,33 @@ void readFile(const string& filename) {
         cerr << "Unable to open file " << filename << endl;
     }
 }
+
+
+int main() {
+    string filename;
+    cout << "Enter filename: ";
+    cin >> filename;
+
+    int choice;
+    do {
+        displayMenu();
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch (choice) {
+            case 1:
+                writeFile(filename);
+                break;
+            case 2:
+                readFile(filename);
+                break;
+            case 3:
+                cout << "Exiting program." << endl;
+                break;
+            default:
+                cout << "Invalid choice. Please try again." << endl;
+        }
+    } while (choice != 3);
+
+    return 0;
+}
