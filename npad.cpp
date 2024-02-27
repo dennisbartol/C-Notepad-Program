@@ -27,3 +27,18 @@ void writeFile(const string& filename) {
         cerr << "Unable to open file " << filename << endl;
     }
 }
+
+
+void readFile(const string& filename) {
+    ifstream file(filename);
+    if (file.is_open()) {
+        string line;
+        cout << "Contents of " << filename << ":" << endl;
+        while (getline(file, line)) {
+            cout << line << endl;
+        }
+        file.close();
+    } else {
+        cerr << "Unable to open file " << filename << endl;
+    }
+}
